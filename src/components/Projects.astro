@@ -1,7 +1,11 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import NextJS from "./icons/NextJS.astro"
+import Dotnet from "./icons/Dotnet.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import ReactJS from "./icons/ReactJS.astro"
+import Css from "./icons/Css.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
@@ -16,24 +20,55 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  DOTNET: {
+    name: "Dotnet",
+    class: "bg-[#5c2d99] text-white",
+    icon: Dotnet,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#F9B747] text-white",
+    icon: JavaScript,
+  },
+  REACTJS: {
+    name: "React.js",
+    class: "bg-[#003366] text-white",
+    icon: ReactJS,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#005999] text-white",
+    icon: Css,
+  },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "GlowUp - Landing page que ofrece servicios de limpieza",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
+      "GlowUp Company es una empresa que ofrece servicios de limpieza para casas y negocios en Los Angeles, CA. Creado con Next.js, React y Tailwind CSS.",
+    // link: "https://svgl.vercel.app/",
+    github: "https://github.com/Alvarenga144/GlowUp-LandingPage",
+    image: "/projects/glowup.png",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "User Manager - Administrador de usuarios básico",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    "Sistema básico para prueba técnica para programador junior .NET, Mi primer live coding realizado exitosamente. Creada desde cero con ASP.NET, SQL y Blazor.",
+    // link: "https://adventjs.dev",
+    github: "https://github.com/Alvarenga144/CRUD_SERFTEST_ASP.NET7",
+    image: "/projects/crudserfinsa.png",
+    tags: [TAGS.DOTNET, TAGS.JAVASCRIPT],
+
+  },
+  {
+    title: "Todo App",
+    description:
+    "Escribe tus tareas pendientes, márcalas como completadas, elimínalas y comienza nuevas. Todo list hecho con React como parte del aprendizaje de un curso de Platzi.",
+    link: "https://alvarenga144.github.io/TodoList-Reactjs18/",
+    github: "https://github.com/Alvarenga144/TodoList-Reactjs18",
+    image: "/projects/todoapp.png",
+    tags: [TAGS.REACTJS, TAGS.CSS],
   },
 ]
 ---
@@ -43,8 +78,8 @@ const PROJECTS = [
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-300 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Foto de referencia" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
@@ -68,19 +103,18 @@ const PROJECTS = [
 
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
+        {github && (
+          <LinkButton href={github} target="_blank" rel="noopener noreferrer">
+            <GitHub class="size-6" />
+            Code
+          </LinkButton>
+        )}
+        {link && (
+          <LinkButton href={link} target="_blank" rel="noopener noreferrer">
+            <Link class="size-4" />
+            Preview
+          </LinkButton>
+        )}
         </footer>
     </div>
   </div>
