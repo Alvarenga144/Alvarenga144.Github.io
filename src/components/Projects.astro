@@ -6,6 +6,9 @@ import Dotnet from "./icons/Dotnet.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import ReactJS from "./icons/ReactJS.astro";
 import Css from "./icons/Css.astro";
+import Vite from "./icons/Vite.astro";
+import Azure from "./icons/Azure.astro";
+import Mongodb from "./icons/MongoDB.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -40,16 +43,40 @@ const TAGS = {
     class: "bg-[#005999] text-white",
     icon: Css,
   },
+  VITE: {
+    name: "Vite",
+    class: "bg-[#F9B747] text-white",
+    icon: Vite,
+  },
+  AZURE: {
+    name: "Azure",
+    class: "bg-[#003366] text-white",
+    icon: Azure,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#2cac68] text-white",
+    icon: Mongodb,
+  },
 };
+
 const PROJECTS = [
   {
-    title: "GlowUp - Clean services' landing page",
+    title: "Alejandría Client",
     description:
-      "GlowUp Company is a company that offers clean services to houses, restaurants and hotels, at Los Angeles, CA. Created with Next.js, React y Tailwind CSS.",
+      "Alejandría is a startup project that it achieved +30k registered users in less than 4 months. A mix of a social network, marketplace and an integrated chat with AI.",
+    github: "https://github.com/Alvarenga144/alejandria.client",
+    iframe: "https://www.youtube.com/embed/yGEeAZTmpWc?si=gpjjLEBCXiPVZzpB",
+    tags: [TAGS.REACTJS, TAGS.TAILWIND, TAGS.VITE],
+  },
+  {
+    title: "Alejandría API",
+    description:
+      "Alejandría API with multiple functions like, Auth, JWT, RAG AI, Email Services, validations, Azure Blob Storage, Azure AI Services and NoSQL DB. Made from scratch with .NET 8.",
     // link: "https://svgl.vercel.app/",
-    github: "https://github.com/Alvarenga144/GlowUp-LandingPage",
-    image: "/projects/glowup.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    github: "https://github.com/Alvarenga144/alejandria.server",
+    image: "/projects/apialejandra.webp",
+    tags: [TAGS.DOTNET, TAGS.AZURE, TAGS.MONGODB],
   },
   {
     title: "User Manager - User's Management System",
@@ -73,107 +100,84 @@ const PROJECTS = [
 ---
 
 <div class="flex flex-col gap-y-16">
-
-  <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-    <div class="w-full md:w-1/2">
-      <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-300 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-        <div class="relative w-full h-0" style="padding-bottom: 56.25%;">
-          <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/yGEeAZTmpWc?si=gpjjLEBCXiPVZzpB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  
-    <div class="w-full md:w-1/2 md:max-w-lg">
-      <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-        Alejandria Client
-      </h3>
-      <div class="flex flex-wrap mt-2">
-        <ul class="flex flex-row mb-2 gap-x-2">
-          <li>
-            <span class="flex gap-x-2 rounded-full text-xs py-1 px-2">
-              <tag class="size-4" />
-              tag
-            </span>
-          </li>
-        </ul>
-  
-        <div class="mt-2 text-gray-700 dark:text-gray-400">
-          frontend de alejandria
-        </div>
-        <footer class="flex items-end justify-start mt-4 gap-x-4">
-          <LinkButton href="https://github.com/Alvarenga144/alejandria.client" target="_blank" rel="noopener noreferrer">
-            <GitHub class="size-6" />
-            Code
-          </LinkButton>
-          <LinkButton href="https://github.com/Alvarenga144/alejandria.client" target="_blank" rel="noopener noreferrer">
-            <Link class="size-4" />
-            Preview
-          </LinkButton>
-        </footer>
-      </div>
-    </div>
-  </article>
-  
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-300 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Foto de referencia"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
+    PROJECTS.map(
+      ({ image, iframe, title, description, tags, link, github }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-300 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              {iframe ? (
+                <div
+                  class="relative w-full h-0"
+                  style="padding-bottom: 56.25%;"
+                >
+                  <iframe
+                    class="absolute top-0 left-0 w-full h-full"
+                    src={iframe}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  />
+                </div>
+              ) : (
+                <img
+                  alt="Foto de referencia"
+                  class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                  loading="lazy"
+                  src={image}
+                />
+              )}
             </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-            </footer>
           </div>
-        </div>
-      </article>
-    ))
+
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-2 text-gray-700 dark:text-gray-400">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {github && (
+                  <LinkButton
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <GitHub class="size-6" />
+                    Code
+                  </LinkButton>
+                )}
+                {link && (
+                  <LinkButton
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Link class="size-4" />
+                    Preview
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
+          </div>
+        </article>
+      ),
+    )
   }
 </div>
