@@ -1,0 +1,33 @@
+---
+import EducationItem from "./EducationItem.astro"
+
+const EDUCATION = [
+  {
+    date: "January 2021 - June 2023",
+    title: "Technical Degree in Computer Systems Engineering",
+    institution: "ITCA-FEPADE",
+    description:
+      "During my education at university, I learned the fundamentals of software development, programming languages, databases, UI/UX, and infrastructure.",
+    link: "https://www.itca.edu.sv/",
+  },
+  {
+    date: "January 2019 - December 2020",
+    title: "High School Diploma",
+    institution: "Instituto Nacional de San Rafael",
+    description:
+      "My general studies prior to university.",
+    link: "https://www.facebook.com/p/Instituto-Nacional-de-San-Rafael-100057505448609/?locale=es_LA",
+  }
+];
+
+---
+
+<ol class="relative mt-16">
+  {
+    EDUCATION.map((educations) => (
+      <li class="">
+        <EducationItem {...educations} />
+      </li>
+    ))
+  }
+</ol>

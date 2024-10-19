@@ -1,38 +1,57 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
   {
-    date: "March 2023 - Present...",
-    title: "Full-Stack .NET Developer",
     company: "Serfinsa",
-    description:
-      "Versatile developer in the modernization and creation of internal applications, integrating modern technologies and improving banking APIs for the fintech. Resolution of high-priority incidents and performance optimization. UX/UI design implementation, achieving more intuitive systems with a reduced learning curve for employees.",
     link: "https://www.redserfinsa.com/",
+    summaryTime: "1 year 10 months",
+    roles: [
+      {
+        date: "August 2023 - Present",
+        title: ".NET Software Developer",
+        description:
+          "Versatile developer in the modernization and creation of internal applications, integrating modern technologies and improving banking APIs for the fintech. Resolution of high-priority incidents and performance optimization. UX/UI design implementation, achieving more intuitive systems with a reduced learning curve for employees.",
+      },
+      {
+        date: "March 2023 - July 2023",
+        title: "Systems Operator",
+        description:
+          "Resolve incidents to process business management tasks, monitor transactional flow and connections between banks, and respond to technical requests from Call Centers or direct merchants. Conduct closures of ATMs and manage the country's electronic payments.",
+      },
+    ],
   },
   {
-    date: "November 2023 - May 2024 • 10 Months",
-    title: "Co-Founder & Full-Stack Developer",
     company: "Alejandría",
-    description:
-      "Designer and developer responsible for the main platform, from architecture planning to the MVP and beyond. Product interface and Landing Pages designer. Creation of Social-Commerce by integrating AI services with advanced technologies.",
     link: "https://play.google.com/store/apps/details?id=com.alexandreya.webapp&hl=es_NI",
+    roles: [
+      {
+        date: "November 2023 - May 2024 • 10 Months",
+        title: "Co-Founder & Principal Developer",
+        description:
+          "Designer and developer responsible for the main platform, from architecture planning to the MVP and beyond. Product interface and Landing Pages designer. Creation of Social-Commerce by integrating AI services with advanced technologies.",
+      },
+    ],
   },
   {
-    date: "November 2022 - January 2023 • 3 Months",
-    title: "Technical Support Intern",
     company: "Urbánica",
-    description:
-      "Manage and maintain equipment outside the administrative offices, in shopping centers, residential areas, projects under development, and sales rooms. Streamline equipment maintenance processes and simultaneously inventory, avoiding time losses in each task.",
+    link: "https://www.urbanica.com.sv/",
+    roles: [
+      {
+        date: "November 2022 - January 2023 • 3 Months",
+        title: "Technical Support Intern",
+        description:
+          "Manage and maintain equipment outside the administrative offices, in shopping centers, residential areas, projects under development, and sales rooms. Streamline equipment maintenance processes and simultaneously inventory, avoiding time losses in each task.",
+      },
+    ],
   },
 ];
-
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
-      <li class="">
-        <ExperienceItem {...experiencie} />
+    EXPERIENCE.map((experience) => (
+      <li>
+        <ExperienceItem {...experience} />
       </li>
     ))
   }
