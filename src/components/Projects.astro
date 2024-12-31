@@ -11,6 +11,8 @@ import Azure from "./icons/Azure.astro";
 import Mongodb from "./icons/MongoDB.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import DotnetFramework from "./icons/DotnetFramework.astro";
+import Sql from './icons/Sql.astro'
 
 const TAGS = {
   NEXT: {
@@ -24,9 +26,14 @@ const TAGS = {
     icon: Tailwind,
   },
   DOTNET: {
-    name: "Dotnet",
+    name: ".NET Core",
     class: "bg-[#5c2d99] text-white",
     icon: Dotnet,
+  },
+  DOTNETFRAME: {
+    name: ".NET Framework",
+    class: "bg-[#083366] text-white",
+    icon: DotnetFramework,
   },
   JAVASCRIPT: {
     name: "JavaScript",
@@ -58,6 +65,11 @@ const TAGS = {
     class: "bg-[#2cac68] text-white",
     icon: Mongodb,
   },
+  SQL: {
+    name: "SQL",
+    class: "bg-[#e3302a] text-white",
+    icon: Sql,
+  },
 };
 
 const PROJECTS = [
@@ -73,11 +85,20 @@ const PROJECTS = [
   {
     title: "Alejandría API",
     description:
-      "Alejandría API with multiple functions like, Auth, JWT, RAG AI, Email Services, validations, Azure Blob Storage, Azure AI Services and NoSQL DB. Made from scratch with .NET 8.",
+      "Alejandría API with multiple functions like, Auth, JWT, RAG AI, Email Services, validations, Azure Blob Storage, Azure AI Services and NoSQL. Made from scratch with .NET 8",
     // link: "https://svgl.vercel.app/",
     github: "https://github.com/Alvarenga144/alejandria.server",
     image: "/projects/apialejandra.webp",
     tags: [TAGS.DOTNET, TAGS.AZURE, TAGS.MONGODB],
+  },
+  {
+    title: "API META",
+    description:
+      "META API (Modulo de Estadisticas, Transacciones y Adquirentes), to manage employees, transactions and monitor the transactions of your shop.",
+    // link: "https://alvarenga144.github.io/TodoList-Reactjs18/",
+    github: "https://github.com/Alvarenga144/ApiMETA",
+    image: "/projects/apimeta.webp",
+    tags: [TAGS.DOTNETFRAME, TAGS.SQL],
   },
   {
     title: "User Manager - User's Management System",
@@ -87,15 +108,6 @@ const PROJECTS = [
     github: "https://github.com/Alvarenga144/CRUD_SERFTEST_ASP.NET7",
     image: "/projects/crudserfinsa.webp",
     tags: [TAGS.DOTNET, TAGS.JAVASCRIPT],
-  },
-  {
-    title: "Todo App",
-    description:
-      "Write down your to-dos, mark them as completed, delete them and start new ones. All list made with React as part of learning a Platzi course.",
-    link: "https://alvarenga144.github.io/TodoList-Reactjs18/",
-    github: "https://github.com/Alvarenga144/TodoList-Reactjs18",
-    image: "/projects/todoapp.webp",
-    tags: [TAGS.REACTJS, TAGS.CSS],
   },
 ];
 ---
