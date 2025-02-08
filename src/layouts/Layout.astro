@@ -37,6 +37,15 @@ const { description, title } = Astro.props
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/Alvarenga144/Alvarenga144.Github.io/refs/heads/main/public/portfolioBanner.png" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB4V4DK4QH"></script>
+    <script set:html={`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BB4V4DK4QH');
+    `}></script>
+
     <ViewTransitions />
   </head>
 
